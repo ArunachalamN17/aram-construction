@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectItem } from '../data/projects';
+import { getAssetUrl } from '../config/siteConfig';
 import { X, MapPin, Maximize2, Calendar, CheckCircle2, ArrowRight, Building, ShieldAlert } from 'lucide-react';
 
 interface ProjectDetailModalProps {
@@ -37,7 +38,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         {/* Large Hero Image */}
         <div style={{ position: 'relative', height: '340px', width: '100%' }}>
           <img 
-            src={project.mainImage} 
+            src={getAssetUrl(project.mainImage)} 
             alt={project.name}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -137,7 +138,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 {project.galleryImages.map((imgUrl, i) => (
                   <div key={i} style={{ height: '110px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', border: '1px solid var(--border-light)' }}>
                     <img 
-                      src={imgUrl} 
+                      src={getAssetUrl(imgUrl)} 
                       alt={`${project.name} snapshot ${i + 1}`}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       loading="lazy"

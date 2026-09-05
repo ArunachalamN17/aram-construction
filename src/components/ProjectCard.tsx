@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectItem } from '../data/projects';
+import { getAssetUrl } from '../config/siteConfig';
 import { MapPin, Maximize2, ArrowUpRight } from 'lucide-react';
 
 interface ProjectCardProps {
@@ -24,7 +25,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
       {/* Project Image */}
       <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
         <img 
-          src={project.mainImage} 
+          src={getAssetUrl(project.mainImage)} 
           alt={project.name}
           style={{
             width: '100%',

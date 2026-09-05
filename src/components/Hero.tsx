@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../config/siteConfig';
 import { ArrowRight, ShieldCheck, CheckCircle, ChevronDown } from 'lucide-react';
 
 interface HeroProps {
@@ -16,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
         alignItems: 'center',
         paddingTop: 'calc(var(--header-height) + 2.5rem)',
         paddingBottom: '4.5rem',
-        backgroundImage: 'linear-gradient(rgba(11, 15, 25, 0.74), rgba(11, 15, 25, 0.86)), url("/Home%20Page.jpg")',
+        backgroundImage: `linear-gradient(rgba(11, 15, 25, 0.74), rgba(11, 15, 25, 0.86)), url("${getAssetUrl('Home Page.jpg')}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

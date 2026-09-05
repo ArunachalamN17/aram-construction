@@ -1,5 +1,6 @@
 import React from 'react';
 import { ServiceItem } from '../data/services';
+import { getAssetUrl } from '../config/siteConfig';
 import { Home, Building2, Factory, HardHat, Hammer, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -23,7 +24,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onEnquire }) 
       {/* Service Image */}
       <div style={{ position: 'relative', height: '230px', overflow: 'hidden' }}>
         <img 
-          src={service.image} 
+          src={getAssetUrl(service.image)} 
           alt={service.title}
           style={{
             width: '100%',

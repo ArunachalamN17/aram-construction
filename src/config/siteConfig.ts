@@ -86,3 +86,15 @@ export function getWhatsAppUrl(customMessage?: string): string {
 export function getTelUrl(phoneRaw?: string): string {
   return `tel:+${phoneRaw || siteConfig.contact.primaryPhoneRaw}`;
 }
+
+/**
+ * Helper to generate correct asset URLs for dev and GitHub Pages base path
+ */
+export function getAssetUrl(path: string): string {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const cleanPath = path.replace(/^\//, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { siteConfig, getTelUrl } from '../config/siteConfig';
+import { siteConfig, getTelUrl, getAssetUrl } from '../config/siteConfig';
 import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
             <a href="#hero" className="brand-logo" aria-label="Aram Construction & Traders Home">
               <div className="brand-icon">
                 <img
-                  src="/Logo.jpg"
+                  src={getAssetUrl('Logo.jpg')}
                   alt="Aram Construction & Traders Logo"
                   style={{ objectFit: 'contain' }}
                 />
@@ -248,7 +248,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
           <div className="brand-logo">
             <div className="brand-icon">
               <img
-                src="/Logo.jpg"
+                src={getAssetUrl('Logo.jpg')}
                 alt="Aram Construction & Traders Logo"
                 style={{ objectFit: "contain" }}
               />

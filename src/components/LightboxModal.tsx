@@ -1,5 +1,6 @@
 import React from 'react';
 import { GalleryItem } from '../data/gallery';
+import { getAssetUrl } from '../config/siteConfig';
 import { X, ChevronLeft, ChevronRight, Maximize } from 'lucide-react';
 
 interface LightboxModalProps {
@@ -89,7 +90,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
           }}
         >
           <img 
-            src={item.imageUrl} 
+            src={getAssetUrl(item.imageUrl)} 
             alt={item.title}
             style={{
               maxHeight: '75vh',

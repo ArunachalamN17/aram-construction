@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { galleryData, galleryCategories, GalleryItem } from '../data/gallery';
+import { getAssetUrl } from '../config/siteConfig';
 import { LightboxModal } from './LightboxModal';
 import { Maximize2, Image as ImageIcon } from 'lucide-react';
 
@@ -97,7 +98,7 @@ export const GallerySection: React.FC = () => {
               }}
             >
               <img 
-                src={item.imageUrl} 
+                src={getAssetUrl(item.imageUrl)} 
                 alt={item.title}
                 style={{
                   width: '100%',

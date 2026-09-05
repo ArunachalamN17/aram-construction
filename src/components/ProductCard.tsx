@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductItem } from '../data/products';
+import { getAssetUrl } from '../config/siteConfig';
 import { Package, ArrowRight, Check } from 'lucide-react';
 
 interface ProductCardProps {
@@ -26,7 +27,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onEnquire }) 
       {/* Product Image */}
       <div style={{ position: 'relative', height: '190px', overflow: 'hidden' }}>
         <img 
-          src={product.image} 
+          src={getAssetUrl(product.image)} 
           alt={product.name}
           style={{
             width: '100%',

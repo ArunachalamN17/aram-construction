@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteConfig, getTelUrl } from '../config/siteConfig';
+import { siteConfig, getTelUrl, getAssetUrl } from '../config/siteConfig';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
             <div className="brand-logo" style={{ marginBottom: '1rem' }}>
               <div className="brand-icon">
                 <img
-                  src="/Logo.jpg"
+                  src={getAssetUrl('Logo.jpg')}
                   alt="Aram Construction & Traders Logo"
                   style={{ objectFit: 'contain' }}
                 />
